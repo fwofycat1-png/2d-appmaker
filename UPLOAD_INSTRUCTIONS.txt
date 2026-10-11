@@ -1,0 +1,18 @@
+2d appmaker V65 — GitHub Pages upload instructions
+
+Repository: https://github.com/fwofycat1-png/2d-appmaker
+Website: https://fwofycat1-png.github.io/2d-appmaker/
+
+1. Extract this ZIP on your computer.
+2. Open your GitHub repository, select Add file > Upload files.
+3. Upload index.html and the downloads folder (including its ZIP file), plus any other files that aren't already in your repository.
+4. IMPORTANT: Keep index.html in the ROOT of the repository (not inside a folder).
+5. Commit the changes to your main branch.
+6. In Settings > Pages, confirm 'Deploy from a branch' uses main and /(root), if that is your current deployment method.
+7. Allow GitHub Pages a few minutes to publish, then refresh your website.
+
+The Download button points to downloads/2d_appmaker_v65_source.zip.
+This ZIP contains Python source code; it is NOT a precompiled Mac/Windows application.
+If GitHub's upload interface doesn't preserve the downloads folder, create a downloads folder in the repository and upload the ZIP inside it.
+
+The website includes a decorative illustration, not an actual app screenshot.
