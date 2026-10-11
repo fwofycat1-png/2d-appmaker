@@ -1,0 +1,8 @@
+2d appmaker V65 - async editor main loop
+
+Run: python 2d_appmaker_v65.py
+Requires pygame-ce and the same dependencies as V64.
+
+The editor loop now runs in async def main() with asyncio.run(main()) and await asyncio.sleep(0) once per frame. All original V64 functionality, Code Chat commands, and exported game player source remain unchanged.
+
+Note: Code Chat does not accept Python async def or arbitrary while loops. This update only changes the editor event loop.

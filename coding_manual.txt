@@ -1,0 +1,167 @@
+HOW TO CODE IN 2D APPMAKER
+The Code Chat uses SIMPLE COMMANDS,
+not raw Python code.
+
+APP COMMANDS:
+HELP
+MOVE RIGHT 50
+MOVE Character 1 LEFT 30
+SAY Hello there!
+SAY Character 1 Welcome!
+SET has_key yes
+IF has_key yes SAY Door opens!
+HIDE  /  SHOW  /  CLEAR
+PLAY  /  STOP
+
+PYTHON BASICS (for learning):
+1. Print a message:
+print("Hello!")
+
+2. Store a value:
+health = 100
+name = "Hero"
+
+3. Check a condition:
+if health > 0:
+    print("Still alive")
+
+4. Repeat with a loop:
+for step in range(5):
+    print(step)
+
+5. Define a function:
+def greet(name):
+    print("Hi", name)
+
+6. Use a list:
+items = ["key", "map"]
+print(items[0])
+
+IMPORTANT:
+Python examples are lessons only.
+Paste APP COMMANDS in Code Chat.
+Python Script runs trusted Python code.
+Never run scripts from strangers.
+Use api.move(id, dx, dy), api.say(text).
+Edit coding_manual.txt to add lessons.
+
+SCENES AND STORY CHOICES (VERSION 6)
+Scenes panel > New Scene: type a name, then Enter.
+Scenes panel > Next Scene: switch between your scenes.
+Scenes panel > Type: choose exploration, dialogue, or choice.
+Scenes panel > Walking: turn movement on/off.
+Scenes panel > Player: select a character first, then assign it.
+Game Mode: use WASD or arrow keys in exploration scenes.
+
+CODE CHAT STORY COMMANDS
+SCENE Scene 2
+MOVEMENT ON
+MOVEMENT OFF
+SAY Welcome to my story!
+CHOICE Help her -> Scene 2
+CHOICE Walk away -> Scene 3
+
+Create target scenes before selecting their choices.
+In a choice-type scene, choices appear during Game Mode.
+
+REAL PYTHON API EXAMPLES (TRUSTED DEVELOPER SCRIPTS ONLY)
+api.change_scene("Scene 2")
+api.set_movement(False)
+api.say("Hello there!")
+api.choice("Help her", "Scene 3")
+
+WARNING: Real Python scripts run with your computer permissions.
+Only execute scripts you wrote and understand.
+
+
+VERSION 7 — DIALOGUE TIMELINE
+Open Code Chat and enter one command at a time:
+LINE Hero: Where am I?
+LINE Friend: You're finally awake!
+LINE Hero: Let's explore.
+NEXT           (advance to next line)
+CLEARLINES     (clear the current scene's timeline)
+In Game Mode, click the dialogue box or press Space to advance.
+Dialogue lines belong to the current scene and save in the project JSON.
+
+VERSION 7 — COLLISION DETECTION
+In Scenes, click Collisions to toggle solid objects and characters.
+Or use Code Chat:
+COLLISION ON
+COLLISION OFF
+In exploration Game Mode, the player cannot walk through objects,
+other characters, or outside the canvas. This uses rectangle collisions.
+To make a wall, import an object PNG and resize it over the wall area.
+
+VERSION 7 — VISUAL STORY FLOW
+Click Story Flow in the right sidebar.
+See scene nodes and lines between linked scenes.
+Click a scene node to open it in the editor.
+Scroll the mouse wheel to see more scenes.
+Create a choice link with Code Chat:
+CHOICE Help her -> Scene 2
+CHOICE Leave -> Scene 3
+Use a choice-type scene and Game Mode to test those links.
+
+IMPORTANT: This is a basic visual flow viewer, not yet a drag-and-drop
+node editor. Add/edit connections using CHOICE commands.
+
+
+VERSION 63 - CONSECUTIVE DIALOGUE & EDITING
+==========================================
+CODE CHAT: Type one command, then press Enter.
+
+CONSECUTIVE DIALOGUE (ONE COMMAND):
+LINES Alice: Hello! | Bob: Hi! | Alice: Welcome to my village!
+The vertical bar | separates lines. Each line appears in sequence.
+LINES appends to the current scene's dialogue timeline.
+
+CONSECUTIVE DIALOGUE (ONE LINE AT A TIME):
+CLEARLINES
+LINE Alice: Hello!
+LINE Bob: Hi!
+LINE Alice: Welcome!
+Enter each command separately.
+In Play Mode, click or press Space to advance.
+NEXT advances dialogue from Code Chat.
+CLEARLINES clears the dialogue timeline.
+
+BACKGROUND SIZE:
+BGSIZE 960 640
+BGSIZE 1920 1080
+Sets the displayed width and height of the current scene background.
+You can also use the Background Width +/- and Height +/- controls.
+
+SAVE DIALOGUE TEXT:
+SAVETEXT
+Writes the current scene's dialogue lines to SceneName_dialogue.txt
+next to the manual. To preserve everything in a game project, also
+use the app's Save Project feature.
+
+DELETE:
+Select an entity and press Delete or Backspace to delete it.
+Hold the Delete key for about 1.2 seconds in Edit Mode to clear
+ALL entities from the current scene. This does not clear dialogue.
+Save a backup first: clearing cannot be undone.
+
+TIPS:
+- Use different speaker names before the colon for VN conversations.
+- Dialogue is stored in the scene, not attached to an NPC.
+- For character-specific conversations, use the individual events system.
+- A game export includes saved scene dialogue lines.
+- Keep backup project files before editing major scenes.
+
+VERSION 64 - RANDOM CONSECUTIVE CHARACTER DIALOGUE
+Select a character, open Code Chat, and enter:
+ON CLICK RANDOM DIALOGUE
+    CHOICE
+        SAY MM: Hello!
+        SAY MM: How are you?
+    CHOICE
+        SAY MM: Bye!
+        SAY MM: See you soon!
+END RANDOM DIALOGUE
+Save Events, switch to Game Mode, then click the character. A random CHOICE
+is picked for each conversation; each click advances one SAY line. After the
+final line, clicking the character again picks a new random CHOICE.
+Use a separate block on each character for character-specific conversations.
